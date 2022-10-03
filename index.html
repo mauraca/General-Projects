@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<!--
+This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html> !
+-->
+<head>
+    <meta charset=utf-8 />
+    <title>title </title> <!-- Document title -->
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+     <!-- The link below refers to leaflet specific css functions -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+
+<!-- Anything between the style tags is CSS. CSS is what you use to add color and design to your html page -->
+    <style>
+        /* This is how you comment in css */
+        /* Anything between the style tag <style> < / style> is css code */
+        /* helpful CSS colors: https://www.w3schools.com/w3css/w3css_colors.asp */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #015620;
+            font-family: Lato, sans-serif;
+            color: #0D0000;
+        }
+        header {
+            padding: 6px 10%;
+        }
+        h1 {
+            display: inline-block;
+            margin-right: 20px;
+            color: #0D0000;
+        }  /* Any h1 tags will be styled like this */
+        h2 {
+            display: inline-block;
+            color: #001323;
+        }
+        #map {
+            width: 80%;
+            height: 340px;
+            margin: 20px auto;
+        }
+        /*  '#' in css is used to assign a class to a control having the same id as class name in this case: "map"   */
+        footer {
+            padding: 6px 10%;
+            width: 80%;
+        }
+        .myDiv {
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+        }
+        /* The "." in front of myDiv creates a style for anything labelled "myDIV" in the html tag see <div> tag below */
+
+        .otherDiv {
+            border: 5px outset green;
+            background-color: powderblue;
+            text-align: center;
+        }
+        p {
+            font-size: 1em;
+            color: #0D0000;
+      }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Hello Public Healthers!</h1>   <!-- Visible title -->
+        <h2></h2>
+
+        <div class = "myDiv">
+<h1> Howdy </h1>
+<h2> smaller text </h2>
+<h3> even smaller </h3>
+</div>
+        <div class = "otherDiv">
+<p> this is a paragraph </p>
+        </div>
+    </header>
+
+    <div id='map'></div>
+
+    <footer>
+        <p>By ?</p>
+    </footer>
+
+    <script>
+    var map = L.map('map', {
+center: [39.94680877440328, -75.17729384453457],
+zoom: 15,
+});
+
+var Satellite = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Make a simple circle
+        var circle = L.circle([39.9331904, -75.1614319], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+
+// Make a shape
+var polygon = L.polygon([
+    [39.8331904, -75.2614319],
+    [39.8731904, -75.3614319],
+    [39.8231904, -75.2214319]
+]).addTo(map);
+
+// Add a marker
+L.marker([39.5331904, -75.2614319]).addTo(map);
+
+
+    </script>
+   <!-- You can add data here, but that is another day's lesson
+      <script src = "js/lead.js"> </script>
+    <script src = "js/main.js"> </script>  -->
+
+</body>
+
+</html>
