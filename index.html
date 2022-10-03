@@ -36,7 +36,7 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
         }  /* Any h1 tags will be styled like this */
         h2 {
             display: inline-block;
-            color: #001323;
+            color: #001573;
         }
         #map {
             width: 80%;
@@ -91,8 +91,8 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
 
     <script>
     var map = L.map('map', {
-center: [39.94680877440328, -75.17729384453457],
-zoom: 15,
+center: [40.05978370884369, -75.19022114544619],
+zoom: 12,
 });
 
 var Satellite = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -101,7 +101,7 @@ attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStree
 
 // Make a simple circle
         var circle = L.circle([39.9331904, -75.1614319], {
-    color: 'red',
+    color: 'green',
     fillColor: '#f03',
     fillOpacity: 0.5,
     radius: 500
@@ -111,11 +111,11 @@ attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStree
 var polygon = L.polygon([
     [39.8331904, -75.2614319],
     [39.8731904, -75.3614319],
-    [39.8231904, -75.2214319]
+    [40.8231904, -75.2214319]
 ]).addTo(map);
 
 // Add a marker
-L.marker([39.5331904, -75.2614319]).addTo(map);
+L.marker([40.05978370884369, -75.19022114544619]).addTo(map);
 
 
     </script>
