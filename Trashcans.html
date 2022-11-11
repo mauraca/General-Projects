@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<!--
+This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html> !
+-->
+<head>
+    <meta charset=utf-8 />
+    <title>Mt. Airy Trash Cans </title> <!-- Document title -->
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+     <!-- The link below refers to leaflet specific css functions -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+
+<!-- Anything between the style tags is CSS. CSS is what you use to add color and design to your html page -->
+    <style>
+        /* This is how you comment in css */
+        /* Anything between the style tag <style> < / style> is css code */
+        /* helpful CSS colors: https://www.w3schools.com/w3css/w3css_colors.asp */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #43977A;
+            font-family: Lato, sans-serif;
+            color: #0D0000;
+        }
+        header {
+            padding: 6px 10%;
+        }
+        h1 {
+            display: inline-block;
+            margin-right: 20px;
+            color: #0D0000;
+        }  /* Any h1 tags will be styled like this */
+        h2 {
+            display: inline-block;
+            color: #001573;
+        }
+        #map {
+            width: 80%;
+            height: 340px;
+            margin: 20px auto;
+        }
+        /*  '#' in css is used to assign a class to a control having the same id as class name in this case: "map"   */
+        footer {
+            padding: 6px 10%;
+            width: 80%;
+        }
+        .myDiv {
+            border: 5px outset black;
+            background-color: #E2D5B7;
+            text-align: center;
+        }
+        /* The "." in front of myDiv creates a style for anything labelled "myDIV" in the html tag see <div> tag below */
+
+        .otherDiv {
+            border: 5px outset black;
+            background-color: #E2D5B7;
+            text-align: center;
+        }
+        p {
+            font-size: 1em;
+            color: #0D0000;
+      }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Germantown Ave Trash Cans</h1>   <!-- Visible title -->
+        <h2></h2>
+
+        <div class = "myDiv">
+<h1> The public trash cans available on Germantown Ave., Philadelphia </h1>
+<h2>  </h2>
+<h3> </h3>
+</div>
+        <div class = "otherDiv">
+<p> The red trash symbols represent solo trash cans. The green recycling symbols represent joint trash can and recycling bins.</p>
+        </div>
+    </header>
+
+    <div id='map'></div>
+
+    <footer>
+        <p>By Maura </p>
+    </footer>
+
+    <script>
+    var map = L.map('map', {
+center: [40.054802, -75.186869],
+zoom: 13,
+});
+
+var recycle = L.icon({
+    iconUrl: 'recycleclipart.png',
+    iconSize:     [30, 30], // size of the icon
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+});
+
+var trash = L.icon({
+    iconUrl: 'trashcan.png',
+    iconSize:     [30, 30], // size of the icon
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+});
+
+var Satellite = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Add a marker
+L.marker([40.0568651, -75.1879792], {icon: recycle}).addTo(map);
+L.marker([40.0569537,	-75.1881703], {icon: trash}).addTo(map);
+L.marker([40.057917,	-75.1888083], {icon: recycle}).addTo(map);
+L.marker([40.0583756,	-75.1893286], {icon: trash}).addTo(map);
+L.marker([40.0585206,	-75.1895037], {icon: trash}).addTo(map);
+L.marker([40.0584621,	-75.1895415], {icon: recycle}).addTo(map);
+L.marker([40.0591401,	-75.1902067], {icon: trash}).addTo(map);
+L.marker([40.0592091,	-75.1902701], {icon: trash}).addTo(map);
+L.marker([40.059439,	-75.1904649], {icon: trash}).addTo(map);
+L.marker([40.0598706,	-75.1907529], {icon: trash}).addTo(map);
+L.marker([40.0598832,	-75.1908585], {icon: trash}).addTo(map);
+L.marker([40.059983,	-75.190939], {icon: trash}).addTo(map);
+L.marker([40.060157,	-75.1909852], {icon: trash}).addTo(map);
+L.marker([40.0602532,	-75.1910265], {icon: trash}).addTo(map);
+L.marker([40.0609037,	-75.1916464], {icon: recycle}).addTo(map);
+L.marker([40.0612366,	-75.1918134], {icon: trash}).addTo(map);
+L.marker([40.0613469,	-75.191975], {icon: trash}).addTo(map);
+L.marker([40.0628485,	-75.1929956], {icon: trash}).addTo(map);
+L.marker([40.077288, -75.208996], {icon: trash}).addTo(map);
+L.marker([40.077345, -75.208837], {icon: trash}).addTo(map);
+L.marker([40.077044, -75.208300], {icon: trash}).addTo(map);
+L.marker([40.077034, -75.208069], {icon: trash}).addTo(map);
+L.marker([40.076967, -75.208105], {icon: trash}).addTo(map);
+L.marker([40.076797, -75.207793], {icon: trash}).addTo(map);
+L.marker([40.076805, -75.207679], {icon: trash}).addTo(map);
+L.marker([40.076627, -75.207375], {icon: trash}).addTo(map);
+L.marker([40.076630, -75.207308], {icon: trash}).addTo(map);
+L.marker([40.076604, -75.207246], {icon: trash}).addTo(map);
+L.marker([40.076586, -75.207428], {icon: trash}).addTo(map);
+L.marker([40.076025, -75.206503], {icon: trash}).addTo(map);
+L.marker([40.076058, -75.206426], {icon: trash}).addTo(map);
+L.marker([40.076019, -75.206361], {icon: trash}).addTo(map);
+L.marker([40.075975, -75.206411], {icon: trash}).addTo(map);
+L.marker([40.075121, -75.204984], {icon: trash}).addTo(map);
+L.marker([40.075158, -75.204916], {icon: trash}).addTo(map);
+L.marker([40.075128, -75.204854], {icon: trash}).addTo(map);
+L.marker([40.075077, -75.204908], {icon: trash}).addTo(map);
+L.marker([40.074623, -75.203969], {icon: recycle}).addTo(map);
+L.marker([40.073958, -75.203159], {icon: recycle}).addTo(map);
+L.marker([40.073308, -75.202641], {icon: trash}).addTo(map);
+L.marker([40.072528, -75.202228], {icon: trash}).addTo(map);
+L.marker([40.071960, -75.201674], {icon: recycle}).addTo(map);
+L.marker([40.071836, -75.201748], {icon: trash}).addTo(map);
+L.marker([40.070775, -75.200803], {icon: trash}).addTo(map);
+L.marker([40.070707, -75.200746], {icon: recycle}).addTo(map);
+L.marker([40.069643, -75.199793], {icon: trash}).addTo(map);
+L.marker([40.069536, -75.199831], {icon: trash}).addTo(map);
+L.marker([40.069456, -75.199752], {icon: trash}).addTo(map);
+L.marker([40.068661, -75.198663], {icon: trash}).addTo(map);
+L.marker([40.068199, -75.197995], {icon: recycle}).addTo(map);
+L.marker([40.0609037,	-75.1916464], {icon: recycle}).addTo(map);
+L.marker([40.067749, -75.197483], {icon: trash}).addTo(map);
+L.marker([40.067768, -75.197315], {icon: trash}).addTo(map);
+L.marker([40.067320, -75.196823], {icon: trash}).addTo(map);
+L.marker([40.065489, -75.195934], {icon: recycle}).addTo(map);
+L.marker([40.064047, -75.194041], {icon: trash}).addTo(map);
+L.marker([40.055517, -75.187237], {icon: trash}).addTo(map);
+L.marker([40.054802, -75.186869], {icon: trash}).addTo(map);
+L.marker([40.054726, -75.187004], {icon: trash}).addTo(map);
+L.marker([40.053961, -75.186587], {icon: trash}).addTo(map);
+L.marker([40.053285, -75.186227], {icon: trash}).addTo(map);
+L.marker([40.053105, -75.186142], {icon: trash}).addTo(map);
+L.marker([40.053195, -75.186054], {icon: trash}).addTo(map);
+L.marker([40.051846, -75.185293], {icon: recycle}).addTo(map);
+L.marker([40.051621, -75.185313], {icon: trash}).addTo(map);
+
+
+
+
+    </script>
+   <!-- You can add data here, but that is another day's lesson
+      <script src = "js/lead.js"> </script>
+    <script src = "js/main.js"> </script>  -->
+
+</body>
+
+</html>
