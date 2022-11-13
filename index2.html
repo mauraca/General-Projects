@@ -5,7 +5,7 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
 -->
 <head>
     <meta charset=utf-8 />
-    <title>title </title> <!-- Document title -->
+    <title>Mt. Airy Trash Cans </title> <!-- Document title -->
 
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
@@ -22,7 +22,7 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
         body {
             margin: 0;
             padding: 0;
-            background: #015620;
+            background: #43977A;
             font-family: Lato, sans-serif;
             color: #0D0000;
         }
@@ -49,15 +49,15 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
             width: 80%;
         }
         .myDiv {
-            border: 5px outset red;
-            background-color: lightblue;
+            border: 5px outset black;
+            background-color: #E2D5B7;
             text-align: center;
         }
         /* The "." in front of myDiv creates a style for anything labelled "myDIV" in the html tag see <div> tag below */
 
         .otherDiv {
-            border: 5px outset green;
-            background-color: powderblue;
+            border: 5px outset black;
+            background-color: #E2D5B7;
             text-align: center;
         }
         p {
@@ -70,11 +70,11 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
 
 <body>
     <header>
-        <h1>Hello Public Healthers!</h1>   <!-- Visible title -->
+        <h1>Mt. Airy Trash Cans</h1>   <!-- Visible title -->
         <h2></h2>
 
         <div class = "myDiv">
-<h1> Howdy </h1>
+<h1> The public trash cans available on Germantown Ave in Mt. Airy, Philadelphia </h1>
 <h2> smaller text </h2>
 <h3> even smaller </h3>
 </div>
@@ -91,8 +91,8 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
 
     <script>
     var map = L.map('map', {
-center: [40.05978370884369, -75.19022114544619],
-zoom: 12,
+center: [40.0592091,-75.1902701],
+zoom: 15,
 });
 
 var Satellite = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
