@@ -5,7 +5,7 @@ This is how you comment in HTML. Always start your HTML docs with <!DOCTYPE html
 -->
 <head>
     <meta charset=utf-8 />
-    <title>Mt. Airy Trash Cans </title> <!-- Document title -->
+    <title>Germantown Ave. Trash Cans </title> <!-- Document title -->
 
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
@@ -111,6 +111,7 @@ var trash = L.icon({
 var Satellite = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
 
 // Add a marker
 L.marker([40.0568651, -75.1879792], {icon: recycle}).addTo(map);
